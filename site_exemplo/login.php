@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($result->num_rows > 0) {
         $usuario = $result->fetch_assoc();
         $_SESSION['id_usuario'] = $usuario['id_usuario'];
-        $_SESSION['nome_usuario'] = $usuario['nome_usuário'];
+        $_SESSION['nome_usuario'] = $usuario['nome_usuario'];
 
         if ($usuario['isadm'] == 1) {
             $_SESSION['isadm'] = true;

@@ -10,7 +10,7 @@
 <div class="row justify-content-center container-fluid">
 <div class="card" style="width: 28rem;">
     <div class="container">
-        <form method="POST" action=""> 
+        <form method="POST" action="login.php"> 
             <div class="email">
                 <label class="form-label">email</label>
                 <input type="email" class="form-control" name="email" id="email" require>

@@ -7,17 +7,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "SELECT * FROM usuarios WHERE email_usuario='$email' AND senha_usuario='$senha'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
-        $professor = $result->fetch_assoc();
-        $_SESSION['professor_id'] = $professor['id_professores'];
-        $_SESSION['professor_nome'] = $professor['nome'];
+        $usuario = $result->fetch_assoc();
+        $_SESSION['id_usuario'] = $usuario['id_usuario'];
+        $_SESSION['nome_usuario'] = $usuario['nome_usuário'];
 
-        if ($professor['isadm'] == 1) {
+        if ($usuario['isadm'] == 1) {
             $_SESSION['isadm'] = true;
-            echo "bem vindo administrador";
+            echo "Bem-vindo administrador";
             header("Location: tela_adm.php");
 
         } else {
             $_SESSION['isadm'] = false;
+            echo "Bem-vindo";
             header("Location: tela_usuarios.php");
         }
     } else {

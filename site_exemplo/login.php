@@ -14,12 +14,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($usuario['isadm'] == 1) {
             $_SESSION['isadm'] = true;
             echo "Bem-vindo administrador";
-            header("Location:tela_adm.php");
+            header("refresh:2;Location:index.php");
 
         } else {
             $_SESSION['isadm'] = false;
             echo "Bem-vindo";
-            header("Location:tela_usuarios.php");
+            header("refresh:2;Location:tela_usuarios.php");
         }
     } else {
         header("Location: index.php");
